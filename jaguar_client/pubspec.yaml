@@ -10,10 +10,13 @@ environment:
 
 dependencies:
   http: ^0.12.0
-  jaguar_serializer: ^2.2.0
+  jaguar_serializer:
+    path: ../../jaguar_serializer/serializer
   auth_header: ^2.1.4
-  client_cookie: ^2.1.2
-  jaguar_resty: ^2.10.14
+  client_cookie:
+    path: ../client_cookie
+  jaguar_resty:
+    path: ../resty
   async: ^2.0.7
   meta: ^1.1.6
 
@@ -23,4 +26,5 @@ dev_dependencies:
   jaguar_reflect: ^2.4.1
   build_runner: ^0.10.0
   build_web_compilers: ^0.4.0
-  jaguar_serializer_cli: ^2.2.0
+  jaguar_serializer_cli:
+    path: ../../jaguar_serializer/serializer_cli

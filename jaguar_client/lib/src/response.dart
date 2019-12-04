@@ -60,7 +60,7 @@ class AsyncJsonResponse extends resty.AsyncStringResponse
   Future<T> decode<T>([T convert(Map d)]) => then((r) => r.decode<T>(convert));
 
   Future<List<T>> decodeList<T>([T convert(Map d)]) =>
-      then((resty.StringResponse r) => r.decodeList<T>(convert));
+      then((resty.StringResponse r) => r.decodeJsonList<T>(convert));
 
   @override
   AsyncJsonResponse run(resty.ResponseHook<String> func) =>
@@ -131,15 +131,15 @@ class JsonResponse extends resty.StringResponse {
   resty.StringResponse get toStringResponse => this;
 
   T decode<T>([T convert(Map<String, dynamic> d)]) {
-    if (convert != null) return super.decode<T>(convert);
+    if (convert != null) return super.decodeJson<T>(convert);
     if (repo != null) return repo.decodeOne<T>(body);
-    return super.decode<T>();
+    return super.decodeJson<T>();
   }
 
   List<T> decodeList<T>([T convert(Map<String, dynamic> d)]) {
-    if (convert != null) return super.decodeList<T>(convert);
+    if (convert != null) return super.decodeJsonList<T>(convert);
     if (repo != null) return repo.decodeList<T>(body);
-    return super.decodeList<T>();
+    return super.decodeJsonList<T>();
   }
 
   T withSerializer<T>(Serializer<T> serializer) =>

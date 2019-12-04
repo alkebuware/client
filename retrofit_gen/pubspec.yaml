@@ -15,8 +15,10 @@ dependencies:
   logging: ^0.11.0
   source_gen: ^0.9.0
   meta: ^1.1.5
-  jaguar_resty: ^2.10.14
-  jaguar_retrofit: ^2.8.8
+  jaguar_resty:
+    path: ../resty
+  jaguar_retrofit:
+    path: ../retrofit
 
 dev_dependencies:
   pedenatic:

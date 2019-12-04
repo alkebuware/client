@@ -10,11 +10,14 @@ environment:
   sdk: ">=2.0.0-dev.65 <3.0.0"
 
 dependencies:
-  jaguar_serializer: ^2.2.4
+  jaguar_serializer:
+    path: ../../jaguar_serializer/serializer
   http: ^0.12.0
   meta: ^1.1.5
-  jaguar_resty: ^2.10.14
-  jaguar_mimetype: ^1.0.0
+  jaguar_resty:
+    path: ../resty
+  jaguar_mimetype:
+    path: ../mime_type
 
 dev_dependencies:
   pedantic:
